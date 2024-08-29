@@ -10,20 +10,21 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var isNight = false
-    
+    @StateObject private var data = WeatherVM()
+     
     var body: some View {
         ZStack {
             BackgroundView(isNight: isNight)
             
+            
             VStack {
                 CityTextView(cityName: "Cupertino, CA")
                 MainWeatherStatusView(isNight: isNight, temperature: 76)
-                HStack(spacing: 28) {
-                    WheatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temperature: 76)
-                    WheatherDayView(dayOfWeek: "WED", imageName: "sun.max.fill", temperature: 88)
-                    WheatherDayView(dayOfWeek: "THU", imageName: "wind", temperature: 70)
-                    WheatherDayView(dayOfWeek: "FRI", imageName: "cloud.bolt.fill", temperature: 65)
-                    WheatherDayView(dayOfWeek: "SAT", imageName: "cloud.rain.fill", temperature: 60)
+                
+                HStack {
+                    ForEach(data.weatherForcast) { forecast in
+                        WheatherDayView(dayOfWeek: forecast.day, imageName: forecast.iconName, temperature: forecast.temperature)
+                    }
                 }
                 
                 Spacer()

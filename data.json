@@ -1,0 +1,27 @@
+[
+    {
+        "day": "TUE",
+        "temperature": 76,
+        "iconName": "cloud.sun.fill"
+    },
+    {
+        "day": "WED",
+        "temperature": 88,
+        "iconName": "sun.max.fill"
+    },
+    {
+        "day": "THU",
+        "temperature": 70,
+        "iconName": "wind"
+    },
+    {
+        "day": "FRI",
+        "temperature": 65,
+        "iconName":  "cloud.bolt.fill"
+    },
+    {
+        "day": "SAT",
+        "temperature": 60,
+        "iconName":"cloud.rain.fill"
+    }
+]
